@@ -11,11 +11,12 @@ int maxFrameNumber = 100; // The number of frame to record
 
 void setup() {
   size(500, 500);
+  pixelDensity(displayDensity());
   noStroke();
   colorMode(HSB, 100);
 
-  export = new VideoExport(this, "out.mp4");
-  export.startMovie();
+  // export = new VideoExport(this, "out.mp4");
+  // export.startMovie();
 }
 
 void draw() {
@@ -25,10 +26,10 @@ void draw() {
 
   // Animation should come here
 
-  export.saveFrame();
+  // export.saveFrame();
 
   if (frame++ >= maxFrameNumber) {
-    export.endMovie();
+    // export.endMovie();
     exit();
   }
 }
