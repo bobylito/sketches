@@ -5,7 +5,7 @@ Name: <insert name here>
 import com.hamoid.*;
 
 VideoExport export;
-int frame = 0;
+float frame = 0;
 int maxFrameNumber = 100; // The number of frame to record
 // width and height are automagically set by size
 
