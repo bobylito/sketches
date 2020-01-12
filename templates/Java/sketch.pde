@@ -28,6 +28,11 @@ void draw() {
 
   // export.saveFrame();
 
+  /*
+  if(frame == 0) saveFrame("screenshot-1.png");
+  if(frame == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
+  if(frame == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
+  */
   if (frame++ >= maxFrameNumber) {
     // export.endMovie();
     exit();
