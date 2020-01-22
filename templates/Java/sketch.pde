@@ -6,13 +6,15 @@ import com.hamoid.*;
 
 VideoExport export;
 float frame = 0;
-int maxFrameNumber = 100; // The number of frame to record
-// width and height are automagically set by size
+int maxFrameNumber = 500; // The number of frame to record
+// `width` and `height` are automagically set by size
 
 void setup() {
   size(500, 500);
-  pixelDensity(displayDensity());
-  noStroke();
+
+  // Uncomment next line for high DPI support, makes larger files
+  // pixelDensity(displayDensity());
+
   colorMode(HSB, 100);
 
   // export = new VideoExport(this, "out.mp4");
@@ -20,9 +22,8 @@ void setup() {
 }
 
 void draw() {
-  // Background reset
-  fill(100); // white
-  rect(0, 0, width, height);
+  noStroke();
+  background(100);
 
   // Animation should come here
 
@@ -33,6 +34,7 @@ void draw() {
   if(frame == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
   if(frame == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
   */
+
   if (frame++ >= maxFrameNumber) {
     // export.endMovie();
     exit();
