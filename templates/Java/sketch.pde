@@ -1,8 +1,10 @@
 /**
 Name: <insert name here>
-*/
+ */
 
 import com.hamoid.*;
+
+boolean isReadyForExport = false;
 
 VideoExport export;
 float frame = 0;
@@ -17,26 +19,36 @@ void setup() {
 
   colorMode(HSB, 100);
 
-  // export = new VideoExport(this, "out.mp4");
-  // export.startMovie();
+  if(isReadyForExport) {
+    export = new VideoExport(this, "out.mp4");
+    export.setFrameRate(60);
+    export.startMovie();
+  }
+}
+
+void reset() {
+  noStroke();
+  background(100);
+}
+
+void animation() {
 }
 
 void draw() {
-  noStroke();
-  background(100);
+  reset();
+  animation();
 
-  // Animation should come here
-
-  // export.saveFrame();
-
-  /*
-  if(frame == 0) saveFrame("screenshot-1.png");
-  if(frame == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
-  if(frame == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
-  */
+  if(isReadyForExport) {
+    export.saveFrame();
+    if(frame == 0) saveFrame("screenshot-1.png");
+    if(frame == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
+    if(frame == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
+  }
 
   if (frame++ >= maxFrameNumber) {
-    // export.endMovie();
+    if(isReadyForExport) {
+      export.endMovie();
+    }
     exit();
   }
 }
