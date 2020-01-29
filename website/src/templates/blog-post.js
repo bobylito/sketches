@@ -11,7 +11,6 @@ import { rhythm, scale } from "../utils/typography"
 SyntaxHighlighter.registerLanguage("processing", processing)
 
 const SketchPost = props => {
-  console.log(props)
   const code = props.data.src.childRawCode.content
   const video = props.data.video.publicURL
   const siteTitle = props.data.site.siteMetadata.title
