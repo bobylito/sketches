@@ -1,0 +1,35 @@
+.markdown {
+  @apply max-w-xl;
+}
+.markdown h2 {
+  @apply font-display;
+  @apply font-black;
+  @apply text-2xl;
+  @apply pt-4;
+}
+.markdown blockquote {
+  @apply mt-2;
+  @apply font-light;
+  @apply p-4;
+  @apply bg-gray-200;
+  @apply italic;
+}
+
+.markdown blockquote p {
+  @apply p-0;
+}
+
+.markdown p {
+  @apply pt-2;
+  @apply font-body;
+}
+.markdown a {
+  @apply underline;
+}
+.markdown ul {
+  @apply pl-4;
+}
+.markdown ul > li {
+  @apply list-disc;
+  @apply list-inside;
+}
