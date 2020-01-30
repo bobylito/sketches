@@ -5,6 +5,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import { H1, H2, H3, P } from "../components/typography"
+
 const Index = props => {
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
@@ -18,26 +20,31 @@ const Index = props => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="All posts" />
-      {sketches.map(({ node }) => {
-        const { name: title } = node
-        return (
-          <article key={node.name}>
-            <header>
-              <h3>
-                <Link
-                  style={{ boxShadow: `none` }}
-                  to={`sketches/${node.name}`}
-                >
-                  {node.name}
-                  {screenshots[title] && (
-                    <Img fluid={screenshots[title].fluid} />
-                  )}
-                </Link>
-              </h3>
-            </header>
-          </article>
-        )
-      })}
+      <div className="flex flex-wrap">
+        {sketches.map(({ node }) => {
+          const { name: title } = node
+          return (
+            <article
+              key={node.name}
+              className="w-full sm:pr-4 sm:w-1/2 lg:w-1/3"
+            >
+              <header>
+                <H2 className="pt-4">
+                  <Link
+                    style={{ boxShadow: `none` }}
+                    to={`sketches/${node.name}`}
+                  >
+                    {node.name}
+                    {screenshots[title] && (
+                      <Img fluid={screenshots[title].fluid} />
+                    )}
+                  </Link>
+                </H2>
+              </header>
+            </article>
+          )
+        })}
+      </div>
     </Layout>
   )
 }

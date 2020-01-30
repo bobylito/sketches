@@ -1,61 +1,33 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
+
+import "../style/index.css"
+
+import { H1, H3, P } from "./typography"
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1>
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
+    const header =
+      location.pathname === rootPath ? (
+        <H1>
+          <GatsbyLink to={`/`}>{title}</GatsbyLink>
+        </H1>
+      ) : (
+        <H3>
+          <GatsbyLink to={`/`}>{title}</GatsbyLink>
+        </H3>
       )
-    } else {
-      header = (
-        <h3
-          style={{
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
 
     return (
-      <div
-        style={{
-          margin: `auto`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          <p>
-            © Bobylito / Alexandre Valsamou-Stanislawski{" "}
-            {new Date().getFullYear()},
-          </p>
+      <div className="mx-auto">
+        <header className="px-2">{header}</header>
+        <main className="px-2">{children}</main>
+        <footer className="p-2 mt-4 text-gray-500 bg-black">
+          <P>
+            © Alexandre Valsamou-Stanislawski 2019-{new Date().getFullYear()}
+          </P>
           <small>
             Built with
             {` `}
