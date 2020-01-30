@@ -28,7 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const sketchesFolder = result.data.allDirectory.edges
 
-  sketchesFolder.forEach((sketch, index) => {
+  sketchesFolder.forEach(sketch => {
     createPage({
       path: `sketches/${sketch.node.name}`,
       component: blogPost,

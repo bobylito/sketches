@@ -58,7 +58,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allDirectory(filter: { name: { regex: "/day[0-9]+/" } }) {
+    allDirectory(
+      filter: { name: { regex: "/day[0-9]+/" } }
+      sort: { fields: name, order: DESC }
+    ) {
       edges {
         node {
           name
