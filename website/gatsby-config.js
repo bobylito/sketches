@@ -1,3 +1,8 @@
+const stylePluginsConfig = require("./config/gatsby/style")
+const sourceConfig = require("./config/gatsby/source")
+const transformerConfig = require("./config/gatsby/transformer")
+const feedConfig = require("./config/gatsby/feed")
+
 module.exports = {
   siteMetadata: {
     title: `Creative code daily`,
@@ -11,58 +16,9 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/../code`,
-        name: `source`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/pages`,
-        name: `pages`,
-      },
-    },
-    {
-      resolve: "gatsby-transformer-code",
-      options: {
-        name: "source",
-        extensions: ["pde"],
-      },
-    },
-
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
-    },
-    `gatsby-transformer-sharp`,
+    ...sourceConfig,
+    ...stylePluginsConfig,
+    ...transformerConfig,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -70,7 +26,6 @@ module.exports = {
         trackingId: `UA-27607140-3`,
       },
     },
-    // `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -84,70 +39,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Muli:800`, "Open+Sans:400,600"],
-        display: "swap",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allFile } }) => {
-              return allFile.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  title: edge.node.relativeDirectory,
-                  description: edge.node.relativeDirectory,
-                  date: edge.node.birthTime,
-                  url:
-                    site.siteMetadata.siteUrl +
-                    "/sketches/" +
-                    edge.node.relativeDirectory,
-                  custom_elements: [
-                    {
-                      "content:encoded": `<![CDATA[ <img src="${site.siteMetadata.siteUrl}${edge.node.publicURL}" /> ]]>`,
-                    },
-                  ],
-                })
-              })
-            },
-            query: `
-query getAllVideo {
-  allFile(filter: {name: {eq: "out"} extension:{eq:"mp4"}}, sort: {fields: relativeDirectory, order: DESC}) {
-    edges {
-      node {
-        name
-        birthTime
-        extension
-        relativeDirectory
-publicURL
-      }
-    }
-  }
-}
-            `,
-            output: "/rss.xml",
-            title: "Creative Code Daily by Bobylito | RSS feed",
-          },
-        ],
-      },
-    },
+    ...feedConfig,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
