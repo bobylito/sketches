@@ -7,6 +7,7 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { H1, H2, P, A } from "../components/typography"
+import Video from "../components/video"
 
 SyntaxHighlighter.registerLanguage("processing", processing)
 
@@ -24,20 +25,7 @@ const SketchPost = props => {
         <header>
           <H1>{context.name}</H1>
         </header>
-        <video
-          autoPlay
-          loop
-          width="500"
-          className="w-full mx-auto"
-          style={{ maxWidth: "500px", maxHeight: "500px" }}
-          poster={screenshot}
-        >
-          <source src={video} type="video/mp4" />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-        <P className="mx-auto text-sm" style={{ width: "500px" }}>
-          Please wait while the video is loading
-        </P>
+        <Video video={video} screenshot={screenshot} />
         <H2>Code</H2>
         <P>
           View on{" "}

@@ -28,7 +28,7 @@ class Layout extends React.Component {
       )
 
     return (
-      <div className="mx-auto">
+      <div className="mx-auto overflow-hidden">
         <header className="px-2">{header}</header>
         <main className="px-2">{children}</main>
         <footer className="p-2 mt-4 text-gray-500 bg-black">
