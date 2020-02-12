@@ -7,17 +7,15 @@ import com.hamoid.*;
 boolean isReadyForExport = false;
 
 VideoExport export;
-float frame = 0;
-int maxFrameNumber = 500; // The number of frame to record
-// `width` and `height` are automagically set by size
+
+int maxFrameNumber = 600; // The number of frame to record
 
 void setup() {
-  size(500, 500);
+  size(500, 500, P2D);
+  smooth(8);
+  pixelDensity(displayDensity()); // HiDPI, comment if too slow
 
-  // Uncomment next line for high DPI support, makes larger files
-  // pixelDensity(displayDensity());
-
-  colorMode(HSB, 100);
+  // colorMode(HSB, 100); // uncomment if you plan to play with colors
 
   if(isReadyForExport) {
     export = new VideoExport(this, "out.mp4");
@@ -40,12 +38,12 @@ void draw() {
 
   if(isReadyForExport) {
     export.saveFrame();
-    if(frame == 0) saveFrame("screenshot-1.png");
-    if(frame == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
-    if(frame == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
+    if(frameCount == 1) saveFrame("screenshot-1.png");
+    if(frameCount == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
+    if(frameCount == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
   }
 
-  if (frame++ >= maxFrameNumber) {
+  if (frameCount >= maxFrameNumber) {
     if(isReadyForExport) {
       export.endMovie();
     }
