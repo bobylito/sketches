@@ -34,7 +34,7 @@ module.exports = [
                   edge.node.relativeDirectory,
                 custom_elements: [
                   {
-                    "content:encoded": `<![CDATA[ <img src="${site.siteMetadata.siteUrl}${edge.node.publicURL}" /> ]]>`,
+                    "content:encoded": `<![CDATA[${site.siteMetadata.siteUrl}${edge.node.publicURL}]]>`,
                   },
                 ],
               }
