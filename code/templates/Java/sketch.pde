@@ -26,7 +26,7 @@ void setup() {
 
 void reset() {
   noStroke();
-  background(100);
+  background(255);
 }
 
 void animation() {
