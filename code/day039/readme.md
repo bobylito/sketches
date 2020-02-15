@@ -1,5 +1,5 @@
 ---
-title: Day 39 ': old school
+title:"Day 39 ': old school"
 ---
 
 ## Notes about this animation
