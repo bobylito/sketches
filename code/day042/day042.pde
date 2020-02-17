@@ -88,7 +88,7 @@ void draw() {
 
   if (isReadyForExport && frameCount > 1) {
     export.saveFrame();
-    if (frameCount == 1) saveFrame("screenshot-1.png");
+    if (frameCount == 2) saveFrame("screenshot-1.png");
     if (frameCount == Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-2.png");
     if (frameCount == 2 * Math.floor(maxFrameNumber / 3)) saveFrame("screenshot-3.png");
   }
