@@ -8,10 +8,10 @@ boolean isReadyForExport = false;
 
 VideoExport export;
 
-int maxFrameNumber = 600; // The number of frame to record
+float maxFrameNumber = 600; // The number of frame to record
 
 void setup() {
-  size(500, 500, P2D);
+  size(1000, 1000, P2D);
   smooth(8);
   pixelDensity(displayDensity()); // HiDPI, comment if too slow
 
