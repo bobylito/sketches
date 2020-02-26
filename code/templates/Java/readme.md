@@ -2,8 +2,8 @@
 title:
 ---
 
-## Notes about this animation
+## General notes (inspiration, ideas, concept)
 
-## Technical difficulties
+## Technical notes
 
 -
