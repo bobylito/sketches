@@ -1,5 +1,5 @@
 ---
-title: day 56 == than perfect
+title: 'day 56 == than perfect'
 ---
 
 ## General notes (inspiration, ideas, concept)
