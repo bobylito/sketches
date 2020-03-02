@@ -1,5 +1,5 @@
 ---
-title: day 55 : better done
+title: 'day 55 : better done'
 ---
 
 ## General notes (inspiration, ideas, concept)
