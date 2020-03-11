@@ -14,6 +14,7 @@ const Video = ({ video, screenshot }) => {
         style={{ maxWidth: "500px", maxHeight: "500px" }}
         poster={screenshot}
         onLoadedData={() => setIsLoaded(true)}
+        controls
       >
         <source src={video} type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.

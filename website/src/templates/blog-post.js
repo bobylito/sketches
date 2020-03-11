@@ -12,10 +12,11 @@ import Video from "../components/video"
 SyntaxHighlighter.registerLanguage("processing", processing)
 
 const SketchPost = props => {
+  const context = props.pageContext
+
   const code = props.data.src.childRawCode.content
   const video = props.data.video.publicURL
   const siteTitle = props.data.site.siteMetadata.title
-  const context = props.pageContext
   const screenshot = props.data.screenshot.publicURL
 
   return (
