@@ -1,5 +1,5 @@
 /**
-Name: <insert name here>
+ * Name: <insert name here>
  */
 
 import com.hamoid.*;
@@ -11,7 +11,7 @@ VideoExport export;
 float maxFrameNumber = 600; // The number of frame to record
 
 void setup() {
-  size(1000, 1000, P2D);
+  size(700, 700, P2D);
   smooth(8);
   pixelDensity(displayDensity()); // HiDPI, comment if too slow
 
