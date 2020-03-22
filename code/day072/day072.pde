@@ -1,5 +1,5 @@
 /**
- * Name: Day 82 $$ ICE
+ * Name: Day 72 $$ ICE
  */
 
 import com.hamoid.*;
