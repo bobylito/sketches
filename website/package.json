@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "creative-code-daily",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "A website for the daily Processing sketches of @bobylito",
+  "version": "1.0.0",
+  "author": "@bobylito",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/bobylito/sketches"
   },
   "dependencies": {
     "autoprefixer": "^9.7.4",
@@ -40,15 +40,16 @@
   "devDependencies": {
     "tailwindcss": "^1.1.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://bobylito.dev",
   "keywords": [
-    "gatsby"
+    "Processing",
+    "Creative coding"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/bobylito/sketches"
   },
   "scripts": {
     "build": "gatsby build",
@@ -56,7 +57,6 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   }
 }
