@@ -1,5 +1,5 @@
 ---
-title: Day 82 :: global network
+title:"Day 82 :: global network"
 ---
 
 ## General notes (inspiration, ideas, concept)
