@@ -1,0 +1,21 @@
+{
+  "name": "sketches",
+  "version": "1.0.0",
+  "description": "This repository contains the Processing sketches I am making.",
+  "scripts": {
+    "gen:day": "node ./bin/generateDay.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobylito/sketches.git"
+  },
+  "author": "@bobylito",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bobylito/sketches/issues"
+  },
+  "homepage": "https://github.com/bobylito/sketches#readme",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  }
+}
