@@ -3,7 +3,10 @@ import classnames from "classnames"
 
 const H1 = ({ children, className, ...otherProps }) => (
   <h1
-    className={classnames("font-display font-black text-4xl", className)}
+    className={classnames(
+      "font-display font-black md:text-4xl text-3xl",
+      className
+    )}
     {...otherProps}
   >
     {children}

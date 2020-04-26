@@ -11,16 +11,23 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     const header =
       location.pathname === rootPath ? (
-        <>
-          <H1>
+        <div className="flex flex-col md:flex-row justify-center">
+          <H1 className="mb-0 text-sm">
             <GatsbyLink to={`/`}>{title}</GatsbyLink>
           </H1>
-          <nav className="px-2">
-            <GatsbyLink className="underline" to={`/about`}>
+          <nav className="text-base md:flex-grow md:text-right md:m-auto">
+            <GatsbyLink className="underline mr-1 md:mr-3" to={`/about`}>
               About the project
             </GatsbyLink>
+            |
+            <a
+              className="underline ml-1 md:ml-3"
+              href="https://www.instagram.com/bobylito/"
+            >
+              See on Instagram
+            </a>
           </nav>
-        </>
+        </div>
       ) : (
         <H3>
           <GatsbyLink to={`/`}>{title}</GatsbyLink>

@@ -20,14 +20,11 @@ const Index = props => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {sketches.map(({ node }) => {
           const { name: title } = node
           return (
-            <article
-              key={node.name}
-              className="w-full sm:pr-4 sm:w-1/2 lg:w-1/3"
-            >
+            <article key={node.name} className="w-full">
               <header>
                 <H2 className="pt-4">
                   <Link
