@@ -14,10 +14,7 @@ uniform float u_frame;
 uniform float u_nFrame;
 uniform vec3 colorA;
 
-mat2 rotate(float a) {
-  return mat2(cos(a), -sin(a),
-      sin(a), cos(a));
-}
+mat2 rotate(float a) { return mat2(cos(a), -sin(a), sin(a), cos(a)); }
 
 float f(vec2 xy, vec2 center, float beat) {
   float a = atan(center.y, center.x);
@@ -33,12 +30,11 @@ void main() {
 
   float c = 0.;
   float beat = 0.5 * min(-0.5, sin(u_nFrame * M_PI * 10.));
-  for(int i = 0; i < 10; i++) {
+  for (int i = 0; i < 10; i++) {
     float shift = M_PI * float(i) / 5.;
-    vec2 pos = vec2(
-        0.5 + 0.1  * cos(u_nFrame * M_PI * 2. + shift),
-        0.5 + 0.1  * sin(u_nFrame * M_PI * 2. + shift)
-        ) - xy;
+    vec2 pos = vec2(0.5 + 0.1 * cos(u_nFrame * M_PI * 2. + shift),
+                    0.5 + 0.1 * sin(u_nFrame * M_PI * 2. + shift)) -
+               xy;
     c += f(xy, pos, beat) * 0.1;
   }
 
