@@ -26,7 +26,6 @@ void setup() {
 }
 
 void draw() {
-  shader.set("u_frame", float(frameCount));
   shader.set("u_nFrame", frameCount / maxFrameNumber);
   shader.set("u_resolution", float(width) * displayDensity(), float(height) * displayDensity());
   shader(shader);
