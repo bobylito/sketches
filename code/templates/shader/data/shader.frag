@@ -6,6 +6,10 @@ precision mediump float;
 
 #define M_PI 3.1415926535897932384626433832795
 
+// clang-format off
+#pragma glslify: snoise2 = require(glsl-noise/simplex/2d)
+// clang-format on
+
 uniform vec2 u_resolution;
 uniform float u_nFrame;
 
