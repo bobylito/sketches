@@ -1,5 +1,5 @@
 ---
-title: Day 109 ::: 1-bit camo
+title: "Day 109 ::: 1-bit camo"
 ---
 
 ## General notes (inspiration, ideas, concept)
