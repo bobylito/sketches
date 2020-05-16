@@ -13,10 +13,10 @@ float maxFrameNumber = 300; // The number of frame to record
 PShader shader;
 void setup() {
   size(700, 700, P2D);
-  smooth(8);
+  // smooth(8);
   pixelDensity(displayDensity()); // HiDPI, comment if too slow
 
-  shader = loadShader("shader.frag");
+  shader = loadShader("out.frag", "shader.vert");
 
   if(isReadyForExport) {
     export = new VideoExport(this, "out.mp4");

@@ -1,0 +1,12 @@
+{
+  "name": "day-x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": ["glsl"],
+  "author": "@bobylito",
+  "license": "ISC",
+  "dependencies": {
+    "glsl-noise": "0.0.0"
+  }
+}

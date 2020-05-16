@@ -10,10 +10,14 @@ precision mediump float;
 #pragma glslify: snoise2 = require(glsl-noise/simplex/2d)
 // clang-format on
 
+varying vec4 vertColor;
+varying vec4 vertTexCoord;
+
 uniform vec2 u_resolution;
 uniform float u_nFrame;
 
 void main() {
-  vec2 xy = gl_FragCoord.xy / u_resolution;
+  // vec2 xy = gl_FragCoord.xy / u_resolution;
+  vec2 xy = vertTexCoord.st;
   gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }
